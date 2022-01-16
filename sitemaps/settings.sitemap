@@ -1,0 +1,127 @@
+sitemap settings label="Settings"
+{
+
+Frame label="Основное"{
+	Text item=Xi_WindowSwitch_LastOpened5 icon="time" label="Дверь тамбур [%1$ta, %1$tR %1$td.%1$tm.%1$tY ]"
+	Text item=Xi_WindowSwitch_LastOpened6 icon="time" label="Входная дверь [%1$ta, %1$tR %1$td.%1$tm.%1$tY ]"
+	Text item=Xi_WindowSwitch_LastOpened7 icon="time" label="Дверь кабинет [%1$ta, %1$tR %1$td.%1$tm.%1$tY ]"
+	Text item=Xi_WindowSwitch_LastOpened icon="time" label="Окно кухня [%1$ta, %1$tR %1$td.%1$tm.%1$tY ]"	
+	Text item=Xi_WindowSwitch_Status5 label="Дверь тамбур [%s]"  labelcolor=[OPEN="red"]
+	Text item=Xi_WindowSwitch_Status6 label="Входная дверь [%s]"  labelcolor=[OPEN="red"]
+	Text item=Xi_WindowSwitch_Status7 label="Дверь Кабинет [%s]"  labelcolor=[OPEN="red"]
+	Text item=Xi_WindowSwitch_Status label="Окно кухня [%s]"  labelcolor=[OPEN="red"]
+}
+Frame label="Движение"{	
+	Text item=Xi_MotionSensor_LastMotion label="Коридор"
+	Text item=Xi_MotionSensor_2_LastMotion label="Гостиная"
+	Text item=Xi_MotionSensor_3_LastMotion label="Спальня"
+	
+	Switch item=Xi_MotionSensor_MotionStatus label="Движение коридор" mappings=[ON="Есть"] visibility=[Xi_MotionSensor_MotionStatus==ON] labelcolor=[ON="red"] 
+	Switch item=Xi_MotionSensor_MotionStatus label="Движение коридор" mappings=[OFF="Нет"] visibility=[Xi_MotionSensor_MotionStatus==OFF]
+	
+	Switch item=Xi_MotionSensor_2_MotionStatus label="Движение гостиная" mappings=[ON="Есть"] visibility=[Xi_MotionSensor_2_MotionStatus==ON] labelcolor=[ON="red"] 
+	Switch item=Xi_MotionSensor_2_MotionStatus label="Движение гостиная" mappings=[OFF="Нет"] visibility=[Xi_MotionSensor_2_MotionStatus==OFF]
+	
+	Switch item=Xi_MotionSensor_3_MotionStatus label="Спальня" mappings=[ON="Есть"] visibility=[Xi_MotionSensor_3_MotionStatus==ON] labelcolor=[ON="red"]
+	Switch item=Xi_MotionSensor_3_MotionStatus label="Спальня" mappings=[OFF="Нет"] visibility=[Xi_MotionSensor_3_MotionStatus==OFF]
+}
+
+Frame label="Дополнительное"{
+	Switch item=S201  label="Полив гостиная"
+	Switch item=SONOFF3  label="Полив Кабинет"
+}
+
+Frame label="Дополнительное"{
+	Text item=Xi_WindowSwitch_LastOpened2 icon="time" label="Окно спальня [%1$ta, %1$tR %1$td.%1$tm.%1$tY ]"
+	Text item=Xi_WindowSwitch_LastOpened3 icon="time" label="Окно спальня2 [%1$ta, %1$tR %1$td.%1$tm.%1$tY ]"
+	Text item=Xi_WindowSwitch_LastOpened4 icon="time" label="Окно гостиная [%1$ta, %1$tR %1$td.%1$tm.%1$tY ]"
+	Text item=Xi_WindowSwitch_Status2 label="Окно спальня [%s]"
+	Text item=Xi_WindowSwitch_Status3 label="Окно спальня 2 [%s]"
+	Text item=Xi_WindowSwitch_Status4 label="Окно гостиная [%s]"
+}
+
+Frame label="Настройки"{
+	Switch item=SetSecure  label="Сигнализация"
+	Switch item=SetAssist  label="Помощник"
+	Switch item=SetAlerts  label="Оповещения"
+	Switch item=Set433Alerts  label="433 Оповещения"
+	Switch item=SetALight  label="Автоматический свет"
+	Switch item=SetWinter  label="Зимний режим"
+}
+
+//Frame label="Влажность воздуха"{
+//	Text item=SP1_Dht22_Humi1 label="Кабинет [%.1f %%]" icon="humidity"
+//}
+
+Frame label="Датчики"{
+	//Text item=SP1_CO2 label="CO2 [%.1f ppm]" valuecolor=[>28="red",>23="#e15a00",>15="green",>5="#91c000",>0="#3284ff",<0="blue"] labelcolor=[>28="red",>23="#e15a00",>15="green",>5="#91c000",>0="#3284ff",<0="blue"]
+	//Text item=SPtest_Temp1 label="Тепература [%.1f °C]"
+	//Text item=SPtest_Temp1
+	//Chart item=SPtest_Temp1 period=8h refresh=600
+	//Text item=SP1_Temp4  label="Кабинет темп. DHT22 [%.1f °C]" 
+	//Text item=SP1_Temp2  label="Кабинет темп. Dallas [%.1f °C]" icon="temperature"
+	//Text item=Kab_SP1_TempoAVG  label="Кабинет - температура [%.1f °C]"
+	//Text item=SP1_Humi1 label="Кабинет - влажность [%.1f %%]" icon="humidity"
+	//Text item=SP1_Temp1  label="Dallas SP1_Temp1 [%.1f C]" icon="temperature"
+	//Switch item=Light_FF_Office
+	//Slider item=Light_FF_Office
+	//Switch item=SONOFF5servo label="Servo Relay"
+	//Setpoint item=Light_FF_Office step=10 minValue=0 maxValue=100 label="LED-light" icon="slider"
+	//Setpoint item=SONOFF4Dimm step=10 minValue=0 maxValue=100 label="LED Dimmer" icon="slider"
+	
+	//Text item=flor_dallas label="Темп. пола [%.1f °C]" icon="temperature_hot"
+	Text item=TowerReceive label="Получено 433Mhz [%s]"
+	Text item=TowerReceive315 label="Получено 315Mhz [%s]"
+}
+
+Frame label="Online" {
+	Text item=RpiHome_online label="RPi Home [%s]" icon="network"
+    Text item=WolfWiFi label="Wolfmother [%s]" icon="network"
+    Text item=RadioTower_online label="RadioTower [%s]" icon="network"
+    Text item=GoogleHome_online label="Google Home [%s]" icon="network"
+    Text item=XiaomiGate_online label="Xiaomi Gate [%s]" icon="network"
+    Text item=SmartPot1_online  label="Office Hub - CO2 [%s]" icon="network"
+    Text item=Easywolf1_online  label="EasyWolf1 - Temp outside [%s]" icon="network"
+    Text item=Sonoff3_online  label="Гирлянда [%s]" icon="network"
+    Text item=S202_online  label="Лампа диван [%s]" icon="network"
+    Text item=Sonoff5_online  label="Теплый пол [%s]" icon="network"
+    Text item=S201_online  label="Полотенцесушитель [%s]" icon="network"
+    Text item=Macbook_online label="Macbook [%s]" icon="network"    
+	Text item=Android_online label="HTC 10 [%s]" icon="network"
+
+    
+    Text item=EvgeniaIphone_online label="Evgenia iphone [%s]" icon="network"
+    //Text item=Htcm7blacknet  label="Node - m7 Black [%s]" icon="network"
+    //Text item=Htcm7silvernet  label="Node - m7 Silver  [%s]" icon="network"
+    //Text item=AndroidTime label="Android Response Time [%s]"
+}
+
+	
+
+Frame label="Процент заряда"{
+	Text item=Xi_HT_Battery label="Датчика температуры [%s %%]"
+	Text item=Xi_WindowSwitch_Battery label="Датчика окна [%s %%]"
+	Text item=Xi_MotionSensor_Battery label="Датчика движения 1 [%s %%]"
+	Text item=Xi_MotionSensor_2_Battery label="Датчика движения 2 [%s %%]"
+	Text item=Xi_MotionSensor_3_Battery label="Датчика движения 3 [%s %%]"
+	Text item=Xi_Switch_Battery label="Кнопка [%s %%]"
+	Text item=Xi_Switch_Battery2 label="Кнопка 2 [%s %%]"
+	Text item=Xi_Cube_Battery label="Куб [%s %%]"
+	Text item=Xi_WaterSensor_1_Battery label="Протечка 1 [%s %%]"
+	Text item=Xi_WaterSensor_2_Battery label="Протечка 2 [%s %%]"
+}	
+	
+Frame label="Низкий заряд!"{
+	Switch item=Xi_HT_BatteryLow label="Датчика температуры"
+	Switch item=Xi_WindowSwitch_BatteryLow label="Датчика окна"
+	Switch item=Xi_MotionSensor_BatteryLow label="Датчика движения 1"
+	Switch item=Xi_MotionSensor_2_BatteryLow label="Датчика движения 2"
+	Switch item=Xi_MotionSensor_3_BatteryLow label="Датчика движения 3"
+	Switch item=Xi_Switch_BatteryLow label="Кнопка"
+	Switch item=Xi_Switch_BatteryLow2 label="Кнопка 2"
+	Switch item=Xi_Cube_BatteryLow label="Куб"
+	Switch item=Xi_WaterSensor_1_BatteryLow label="Протечка 1"
+	Switch item=Xi_WaterSensor_2_BatteryLow label="Протечка 2"
+}
+
+}

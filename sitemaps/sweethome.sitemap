@@ -1,0 +1,62 @@
+sitemap sweethome label="Sweet Home"
+{
+
+Frame label="Температуры"{
+	Text item=Tube_temp label="Темп. на улице [%.1f °C]" valuecolor=[>28="red",<0="red"]
+	Text item=SP1_TempoAVG label="Темп. дома [%.1f °C]"
+	Text item=SP1_Dallas2 label="Темп. батареи [%.1f °C]" valuecolor=[>70="red",>50="#e15a00"] icon="temperature_hot"
+	Text item=SP1_CO2 label="CO2 [%s ppm]" valuecolor=[>1500="red",>1000="#e15a00"]
+	Text item=SP1_Moist1pesr label="Гибискус [%.1f %%]" icon="garden" valuecolor=[<30="red"]
+}
+	
+Frame label="Свет в квартире"{
+	Switch item=ESOCKET3 label="Кабинет стол"
+	Switch item=ESOCKET4 label="Кабинет диван"
+	Switch item=ESOCKET1 label="Vegas"
+	Switch item=S202 label="Зал диван"
+	//Switch item=SONOFF1 label="Ёлка"
+	Switch item=SONOFF4 label="Буквы"
+	Switch item=SONOFF3 label="Гирлянда"
+	//Switch item=S201 label="Slamper"
+	//Switch item=S202 label="Розетка 2"
+	
+	//Switch item=S201 label="S20-1"
+	Switch item=Xi_Gateway_LightSwitch label="Gateway"
+	//Switch item=SONOFF5 label="Теплый пол" 
+	//Switch item=SONOFF4WOLF label="СветWolf"
+	Switch item=HomeLight icon="light" mappings=[OFF="ВЫКЛ. ВСЕ"]
+	//Switch item=SECURE  label="На отдыхе"
+}
+
+Frame label="Часы M5"{
+	Text item=m5_temp label="Температура [%.1f °C]"
+	Text item=m5_hum label="Влажность [%.1f %%]"
+	Text item=m5_baro label="Давление [%.1f mm]"
+	
+	//Setpoint item=SONOFF4Dimm step=10 minValue=0 maxValue=100 label="LED Dimmer" icon="slider"
+}
+
+Frame label="Сервисы"{
+	Text item=SetSecure label="Secure [%s]" icon="switch"
+	Text item=SetAlerts label="Alerts [%s]" icon="switch"
+	Text item=SetAlerts label="433 Alerts [%s]" icon="switch"
+    Text item=SetALight label="AutoLight [%s]" icon="switch"
+	Text item=SetAssist label="Assistant [%s]" icon="switch"
+}
+
+Frame label="Двери и окна"{
+	Text item=DoorBell label="Звонок [%s]" icon="switch"
+	//Text item=DoorSensor1 label="Входная дверь [%s]" icon="switch"
+	//Switch item=DoorSensor1
+	Text item=DoorSensor1 	
+	Text item=TowerReceive label="Получено 433Mhz [%s]"
+	Text item=TowerReceive315 label="Получено 315Mhz [%s]"
+}
+
+Frame label="Протечки"{
+	Switch item=Xi_WaterSensor_1_WaterStatus label="Протечка стиралка"
+	Switch item=Xi_WaterSensor_2_WaterStatus label="Протечка кухня"
+}
+
+
+}

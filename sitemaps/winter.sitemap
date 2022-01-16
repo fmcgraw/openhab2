@@ -1,0 +1,6 @@
+sitemap main label="Main Home"
+{
+Frame label="Управление теплый полом" {
+  Switch item=SONOFF5 label="Теплый пол" 
+}
+}

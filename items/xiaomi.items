@@ -1,0 +1,113 @@
+// Xiaomi Temperature and Humidity Sensor
+Number Xi_HT_Temperature <temperature> { channel="mihome:sensor_ht:158d00016c891d:temperature" }
+Number Xi_HT_Humidity <humidity> { channel="mihome:sensor_ht:158d00016c891d:humidity" }
+Number Xi_HT_Battery <battery> { channel="mihome:sensor_ht:158d00016c891d:batteryLevel" }
+Switch Xi_HT_BatteryLow <energy> { channel="mihome:sensor_ht:158d00016c891d:lowBattery" }
+
+// Xiaomi Window Switch
+Contact Xi_WindowSwitch_Status <window>  { channel="mihome:sensor_magnet:158d00019f97c1:isOpen" }
+// minimum 30 seconds
+Number Xi_WindowSwitch_AlarmTimer <clock> { channel="mihome:sensor_magnet:158d00019f97c1:isOpenAlarmTimer" }
+DateTime Xi_WindowSwitch_LastOpened "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_magnet:158d00019f97c1:lastOpened" }
+Number Xi_WindowSwitch_Battery <battery> { channel="mihome:sensor_magnet:158d00019f97c1:batteryLevel" }
+Switch Xi_WindowSwitch_BatteryLow <energy> { channel="mihome:sensor_magnet:158d00019f97c1:lowBattery" }
+
+// Xiaomi Window Switch2
+Contact Xi_WindowSwitch_Status2 <window>  { channel="mihome:sensor_magnet:158d0001b75ac0:isOpen" }
+Number Xi_WindowSwitch_AlarmTimer2 <clock> { channel="mihome:sensor_magnet:158d0001b75ac0:isOpenAlarmTimer" }
+DateTime Xi_WindowSwitch_LastOpened2 "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_magnet:158d0001b75ac0:lastOpened" }
+Number Xi_WindowSwitch_Battery2 <battery> { channel="mihome:sensor_magnet:158d0001b75ac0:batteryLevel" }
+Switch Xi_WindowSwitch_BatteryLow2 <energy> { channel="mihome:sensor_magnet:158d0001b75ac0:lowBattery" }
+
+// Xiaomi Window Switch3
+Contact Xi_WindowSwitch_Status3 <window>  { channel="mihome:sensor_magnet:158d0001b759e4:isOpen" }
+Number Xi_WindowSwitch_AlarmTimer3 <clock> { channel="mihome:sensor_magnet:158d0001b759e4:isOpenAlarmTimer" }
+DateTime Xi_WindowSwitch_LastOpened3 "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_magnet:158d0001b759e4:lastOpened" }
+Number Xi_WindowSwitch_Battery3 <battery> { channel="mihome:sensor_magnet:158d0001b759e4:batteryLevel" }
+Switch Xi_WindowSwitch_BatteryLow3 <energy> { channel="mihome:sensor_magnet:158d0001b759e4:lowBattery" }
+
+// Xiaomi Window Switch4
+Contact Xi_WindowSwitch_Status4 <window>  { channel="mihome:sensor_magnet:158d0001b7596c:isOpen" }
+Number Xi_WindowSwitch_AlarmTimer4 <clock> { channel="mihome:sensor_magnet:158d0001b7596c:isOpenAlarmTimer" }
+DateTime Xi_WindowSwitch_LastOpened4 "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_magnet:158d0001b7596c:lastOpened" }
+Number Xi_WindowSwitch_Battery4 <battery> { channel="mihome:sensor_magnet:158d0001b7596c:batteryLevel" }
+Switch Xi_WindowSwitch_BatteryLow4 <energy> { channel="mihome:sensor_magnet:158d0001b7596c:lowBattery" }
+
+// Xiaomi Window Switch5 - Tambur
+Contact Xi_WindowSwitch_Status5 <door>  { channel="mihome:sensor_magnet:158d0001b77d51:isOpen" }
+Number Xi_WindowSwitch_AlarmTimer5 <clock> { channel="mihome:sensor_magnet:158d0001b77d51:isOpenAlarmTimer" }
+DateTime Xi_WindowSwitch_LastOpened5 "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_magnet:158d0001b77d51:lastOpened" }
+Number Xi_WindowSwitch_Battery5 <battery> { channel="mihome:sensor_magnet:158d0001b77d51:batteryLevel" }
+Switch Xi_WindowSwitch_BatteryLow5 <energy> { channel="mihome:sensor_magnet:158d0001b77d51:lowBattery" }
+
+// Xiaomi Window Switch6 - Entrance door
+Contact Xi_WindowSwitch_Status6 <door>  { channel="mihome:sensor_magnet:158d0001b71743:isOpen" }
+Number Xi_WindowSwitch_AlarmTimer6 <clock> { channel="mihome:sensor_magnet:158d0001b71743:isOpenAlarmTimer" }
+DateTime Xi_WindowSwitch_LastOpened6 "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_magnet:158d0001b71743:lastOpened" }
+Number Xi_WindowSwitch_Battery6 <battery> { channel="mihome:sensor_magnet:158d0001b71743:batteryLevel" }
+Switch Xi_WindowSwitch_BatteryLow6 <energy> { channel="mihome:sensor_magnet:158d0001b71743:lowBattery" }
+
+// Xiaomi Window Switch7 - Kabinet door door
+Contact Xi_WindowSwitch_Status7 <door>  { channel="mihome:sensor_magnet:158d0002e9f213:isOpen" }
+Number Xi_WindowSwitch_AlarmTimer7 <clock> { channel="mihome:sensor_magnet:158d0002e9f213:isOpenAlarmTimer" }
+DateTime Xi_WindowSwitch_LastOpened7 "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_magnet:158d0002e9f213:lastOpened" }
+Number Xi_WindowSwitch_Battery7 <battery> { channel="mihome:sensor_magnet:158d0002e9f213:batteryLevel" }
+Switch Xi_WindowSwitch_BatteryLow7 <energy> { channel="mihome:sensor_magnet:158d0002e9f213:lowBattery" }
+
+// Xiaomi Motion Sensor
+Switch Xi_MotionSensor_MotionStatus <motion>  { channel="mihome:sensor_motion:158d0001d666f4:motion" }
+// minimum 5 seconds - remember that the sensor only triggers every minute to save energy
+Number Xi_MotionSensor_MotionTimer <clock> { channel="mihome:sensor_motion:158d0001d666f4:motionOffTimer" }
+DateTime Xi_MotionSensor_LastMotion "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_motion:158d0001d666f4:lastMotion" }
+Number Xi_MotionSensor_Battery <battery> { channel="mihome:sensor_motion:158d0001d666f4:batteryLevel" }
+Switch Xi_MotionSensor_BatteryLow <energy> { channel="mihome:sensor_motion:158d0001d666f4:lowBattery" }
+
+// Xiaomi Switch - see "xiaomi.rules" for action triggers
+Number Xi_Switch_Battery <battery> { channel="mihome:sensor_switch:158d00016442ed:batteryLevel" }
+Switch Xi_Switch_BatteryLow <energy> { channel="mihome:sensor_switch:158d00016442ed:lowBattery" }
+
+// Xiaomi Switch 2
+Number Xi_Switch_Battery2 <battery> { channel="mihome:sensor_switch:158d00019cceb5:batteryLevel" }
+Switch Xi_Switch_BatteryLow2 <energy> { channel="mihome:sensor_switch:158d00019cceb5:lowBattery" }
+
+// Xiaomi Cube
+Number Xi_Cube_RotationAngle <movecontrol> { channel="mihome:sensor_cube:158d000101c3c3:rotationAngle" }
+Number Xi_Cube_RotationTime <movecontrol> { channel="mihome:sensor_cube:158d000101c3c3:rotationTime" }
+Number Xi_Cube_Battery <battery> { channel="mihome:sensor_cube:158d000101c3c3:batteryLevel" }
+Switch Xi_Cube_BatteryLow <energy> { channel="mihome:sensor_cube:158d000101c3c3:lowBattery" }
+
+// Xiaomi Gateway
+Switch Xi_Gateway_LightSwitch <light> (HomeLight) { channel="mihome:gateway:34ce0088ff37:brightness" }
+Dimmer Xi_Gateway_Brightness <dimmablelight> { channel="mihome:gateway:34ce0088ff37:brightness" }
+Color Xi_Gateway_Color <rgb> { channel="mihome:gateway:34ce0088ff37:color" }
+Dimmer Xi_Gateway_ColorTemperature <heating> { channel="mihome:gateway:34ce0088ff37:colorTemperature" }
+
+Number Xi_Gateway_AmbientLight <sun> { channel="mihome:gateway:34ce0088ff37:illumination" }
+Number Xi_Gateway_Sound <soundvolume-0> { channel="mihome:gateway:34ce0088ff37:sound" }
+
+Switch Xi_Gateway_SoundSwitch <soundvolume_mute> { channel="mihome:gateway:34ce0088ff37:enableSound" }
+Dimmer Xi_Gateway_SoundVolume <soundvolume> { channel="mihome:gateway:34ce0088ff37:volume" }
+
+// Xiaomi Motion Sensor 2
+Switch Xi_MotionSensor_2_MotionStatus <motion>  { channel="mihome:sensor_motion:158d0001d572ab:motion" }
+Number Xi_MotionSensor_2_MotionTimer <clock> { channel="mihome:sensor_motion:158d0001d572ab:motionOffTimer" }
+DateTime Xi_MotionSensor_2_LastMotion "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_motion:158d0001d572ab:lastMotion" }
+Number Xi_MotionSensor_2_Battery <battery> { channel="mihome:sensor_motion:158d0001d572ab:batteryLevel" }
+Switch Xi_MotionSensor_2_BatteryLow <energy> { channel="mihome:sensor_motion:158d0001d572ab:lowBattery" }
+
+// Xiaomi Motion Sensor 3
+Switch Xi_MotionSensor_3_MotionStatus <motion>  { channel="mihome:sensor_motion:158d0001d58253:motion" }
+Number Xi_MotionSensor_3_MotionTimer <clock> { channel="mihome:sensor_motion:158d0001d58253:motionOffTimer" }
+DateTime Xi_MotionSensor_3_LastMotion "[%1$tY-%1$tm-%1$td  %1$tH:%1$tM]" <clock-on> { channel="mihome:sensor_motion:158d0001d58253:lastMotion" }
+Number Xi_MotionSensor_3_Battery <battery> { channel="mihome:sensor_motion:158d0001d58253:batteryLevel" }
+Switch Xi_MotionSensor_3_BatteryLow <energy> { channel="mihome:sensor_motion:158d0001d58253:lowBattery" }
+
+// Xiaomi Water Sensor 1
+Switch Xi_WaterSensor_1_WaterStatus	"Протечка стиралка" { channel="mihome:sensor_wleak_aq1:158d0001d78b56:leak" }
+Number Xi_WaterSensor_1_Battery <battery> { channel="mihome:sensor_wleak_aq1:158d0001d78b56:batteryLevel" }
+Switch Xi_WaterSensor_1_BatteryLow <energy> { channel="mihome:sensor_wleak_aq1:158d0001d78b56:lowBattery" }
+
+// Xiaomi Water Sensor 2
+Switch Xi_WaterSensor_2_WaterStatus	"Протечка стиралка" { channel="mihome:sensor_wleak_aq1:158d0001d56f82:leak" }
+Number Xi_WaterSensor_2_Battery <battery> { channel="mihome:sensor_wleak_aq1:158d0001d56f82:batteryLevel" }
+Switch Xi_WaterSensor_2_BatteryLow <energy> { channel="mihome:sensor_wleak_aq1:158d0001d56f82:lowBattery" }

@@ -1,0 +1,24 @@
+sitemap demo label="Cabinet"
+{
+
+Frame label="Датчики"{
+	Text item=SP1_Dallas1
+	Text item=SP1_Dallas2
+	Text item=SP1_Dallas3
+	Text item=SP1_Dht22_Temp1
+	Text item=SP1_TempoAVG
+	Text item=SP1_Dht22_Humi1
+	Text item=SP1_CO2
+	//Text item=SP1_Moist1 icon="humidity"
+	Text item=SP1_Moist1pesr
+	
+}
+
+Frame label="Выключатели"{
+	Switch item=SP1Relay1 label="Свет 1" icon="light"
+	Switch item=SP1Relay2 label="Свет 2" icon="light"
+	Switch item=SP1Relay3 label="Полив" icon="faucet"	
+}
+
+}
+

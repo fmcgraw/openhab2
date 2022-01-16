@@ -1,0 +1,40 @@
+Вот вам#в свете за двух один всего сGroup All
+Group:Switch:OR(ON, OFF)	HomeLight	"Весь свет [(%d)]" (All)
+
+Switch  SetSecure	"Secure"
+Switch  SetAlerts	"Alerts"
+Switch  SetAssist	"Assist"
+Switch  SetALight       "AutoLight"
+
+Switch	ESOCKET1	"Vegas" (HomeLight) { mqtt=">[motherbroker:home/MQTTto433/:command:ON:5264691],>[motherbroker:home/MQTTto433/:command:OFF:5264700]" }
+Switch	ESOCKET2	"433 Socket 2" (HomeLight) { mqtt=">[motherbroker:home/MQTTto433/:command:ON:5264835],>[localbroker:home/MQTTto433/:command:OFF:5264844]" }
+Switch	ESOCKET3	"Kabine" (HomeLight) { mqtt=">[motherbroker:home/MQTTto433/:command:ON:5265155],>[motherbroker:home/MQTTto433/:command:OFF:5265164]" }
+Switch	ESOCKET4	"433 Socket 4" (HomeLight) { mqtt=">[motherbroker:home/MQTTto433/:command:ON:1381683],>[motherbroker:home/MQTTto433/:command:OFF:1381692]" }
+Switch	ESOCKET5	"433 Socket 5" (HomeLight) { mqtt=">[motherbroker:home/MQTTto433/:command:ON:1381827],>[motherbroker:home/MQTTto433/:command:OFF:1381836]" }
+Switch	ESOCKET6	"Pomidor" { mqtt=">[motherbroker:home/MQTTto433/:command:ON:1382147],>[motherbroker:home/MQTTto433/:command:OFF:1382156]" }
+
+Switch	SONOFF1		"Sonoff1" (HomeLight) { mqtt=">[motherbroker:sonoffnode1/gpio/12:command:ON:1],>[motherbroker:sonoffnode1/gpio/12:command:OFF:0]" }
+Switch	SONOFF2		"Sonoff2" (HomeLight) { mqtt=">[motherbroker:sonoffnode2/gpio/12:command:ON:1],>[motherbroker:sonoffnode2/gpio/12:command:OFF:0]" }
+Switch	SONOFF3		"Sonoff3" (HomeLight) { mqtt=">[motherbroker:sonoffnode3/gpio/12:command:ON:1],>[motherbroker:sonoffnode3/gpio/12:command:OFF:0]" }
+Switch	SONOFF4		"Sonoff4" (HomeLight) { mqtt=">[motherbroker:sonoffnode4/gpio/12:command:ON:1],>[motherbroker:sonoffnode4/gpio/12:command:OFF:0]" }
+Switch  SONOFF4WOLF     "Sonoff4wolf" (HomeLight) { mqtt=">[motherbroker:sonoffnode4/gpio/12:command:ON:1],>[motherbroker:sonoffnode4/gpio/12:command:OFF:0]" }
+Switch  SONOFF5         "Sonoff5" <water> (HomeLight) { mqtt=">[localbroker:sonoffnode5/gpio/12:command:ON:1],>[localbroker:sonoffnode5/gpio/12:command:OFF:0]" }
+
+Switch	S201		"S201" (HomeLight) { mqtt=">[localbroker:slamphernode1/gpio/12:command:ON:1],>[localbroker:slamphernode1/gpio/12:command:OFF:0]" }
+Switch  S202            "S202" (HomeLight) { mqtt=">[motherbroker:s20node2/gpio/12:command:ON:1],>[motherbroker:s20node2/gpio/12:command:OFF:0]" }
+
+Number Tube_temp "На улице [%.1f °C]" <temperature> {mqtt="<[localbroker:espsmallnode1/state/5:state:default]"}
+Number SPtest_Temp1 "Тестовая [%.1f °C]" <temperature> {mqtt="<[localbroker:esptestnode1/state/5:state:default]"}
+Number TowerReceive "Получено с башни [%s]" <wind> {mqtt="<[motherbroker:home/433toMQTT:state:default]"}
+
+Switch WolfWiFi		{ channel="network:device:192_168_1_100:online" }
+Switch RadioTower  	{ channel="network:device:radiotower:online" }
+Switch Macbook  	{ channel="network:device:192_168_1_9:online" }
+Switch Android  	{ channel="network:device:533b570f:online" }
+Switch EvgeniaIphone  	{ channel="network:device:95d85d6f:online" }
+Number AndroidTime <clock> { channel="network:device:533b570f:time" }
+
+
+
+Switch  SONOFF5servo         "Sonoff5servo" (HomeLight) { mqtt=">[motherbroker:servonode1/gpio/12:command:ON:1],>[motherbroker:servonode1/gpio/12:command:OFF:0]" }
+Dimmer  Light_FF_Office  "Dimmer [%d %%]"  {mqtt=">[motherbroker:servonode1/gpio/14:command:*:default]" }

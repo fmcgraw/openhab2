@@ -1,0 +1,98 @@
+//rule "Front Door Notification"
+//when
+	//Item Xi_WindowSwitch_Status received update
+	//Item Xi_WindowSwitch_Status changed to OPEN
+//then
+//  	sendCommand(Set433Alerts, OFF)
+//  	sendNotification("Front door was opened!")
+//  	sendTelegram("bot1", "Front door was opened!")
+//end
+
+rule "Poliv1 - Gostinaya"
+when
+	Item S201 changed to ON
+then
+  	createTimer(now.plusSeconds(210), [|
+        sendCommand(S201, OFF)
+    ])
+end
+
+rule "Poliv2 - Кабинет"
+when
+	Item SONOFF3 changed to ON
+then
+  	createTimer(now.plusSeconds(30), [|
+        sendCommand(SONOFF3, OFF)
+    ])
+end
+
+rule "Kabinet stol ON"
+when
+	Time cron "0 8 30 ? * * *"
+then	
+	sendCommand(ESOCKET3, ON)
+end
+
+//rule "Vegas ON"
+//when
+//	Time cron "0 0 20 ? * TUE,THU *"
+//then	
+//	sendCommand(ESOCKET1, ON)
+//	if(SetAlerts.state == ON ) {
+//		sendTelegram("bot1", "Включила Вегас")
+//	}
+//end
+
+//rule "Vegas OFF"
+//when
+//	Time cron "0 0 23 ? * TUE,THU *"
+//then	
+//	sendCommand(ESOCKET1, OFF)
+//	if(SetAlerts.state == ON ) {
+//		sendTelegram("bot1", "Выключила Вегас")
+//	}
+//end
+
+
+
+rule "Divan ON"
+when
+	Time cron "0 5 18 ? * * *"
+then	
+	sendCommand(S202, ON)
+end
+
+rule "Divan OFF"
+when
+	Time cron "0 21 23 ? * * *"
+then	
+	sendCommand(S202, OFF)
+end
+
+
+
+
+
+//rule "Kabinet stol OFF"
+//when
+//	Time cron "0 47 22 ? * * *"
+//then	
+//	sendCommand(ESOCKET3, OFF)
+//end
+
+
+rule "Spalnya ON"
+when
+	Time cron "0 15 17 ? * * *"
+then	
+	sendCommand(ESOCKET4, ON)
+end
+
+rule "Spalnya OFF"
+when
+	Time cron "0 47 23 ? * * *"
+then	
+	sendCommand(ESOCKET4, OFF)
+end
+
+

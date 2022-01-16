@@ -1,0 +1,24 @@
+Group:Number:AVG	SP1_TempoAVG	"Кабинет средняя температура [%.1f °C]" <temperature> (All) [ "Switchable" ]
+
+Number SP1_Dallas1 "Dallas1 - воздух [%.1f °C]" <temperature> (SP1_TempoAVG) {mqtt="<[motherbroker:smartpot1/state/5/temp1:state:default]"}
+Number SP1_Dallas2 "Dallas2 - батарея [%.1f °C]" <temperature> {mqtt="<[motherbroker:smartpot1/state/5/temp2:state:default]"}
+Number SP1_Dallas3 "Dallas3 - батарея [%.1f °C]" <temperature> {mqtt="<[motherbroker:smartpot1/state/5/temp3:state:default]"}
+Number flor_dallas "Температура пола [%.1f °C]" <temperature> {mqtt="<[motherbroker:/Smarthome1/dallastemp/Temperature:state:default]"}
+
+
+Number SP1_Dht22_Temp1 "DHT22 - воздух [%.1f °C]" <temperature> (SP1_TempoAVG) {mqtt="<[motherbroker:smartpot1/state/2/temp:state:default]"}
+Number SP1_Dht22_Humi1 "Влажность воздуха - кабинет [%.1f %%]" <humidity> {mqtt="<[motherbroker:smartpot1/state/2/humi:state:default]"}
+Number SP1_Moist1 "A0 - Влажность почвы c датчкика [%s]" <humi3> {mqtt="<[motherbroker:smartpot1/state/a0:state:default]"}
+Number SP1_Moist1pesr "Почва Гибискус - кабинет [%.1f %%]" <garden>
+Number SP1_CO2 "CO2 в воздухе - кабинет [%s ppm]" <carbondioxide> {mqtt="<[motherbroker:smartpot1/state/14/co2:state:default]"}
+
+
+Switch	SP1Relay1	"Свет 1" { mqtt=">[localbroker:smartpot1/gpio/13:command:ON:1],>[localbroker:smartpot1/gpio/13:command:OFF:0]" }
+Switch	SP1Relay2	"Свет 2" { mqtt=">[localbroker:smartpot1/gpio/12:command:ON:1],>[localbroker:smartpot1/gpio/12:command:OFF:0]" }
+Switch	SP1Relay3	"Полив" <water_valve> { mqtt=">[localbroker:smartpot1/gpio/15:command:ON:1],>[localbroker:smartpot1/gpio/15:command:OFF:0]" }
+Switch	S202Relay1	"Розетка 2" <water_valve> { mqtt=">[localbroker:s20node2/gpio/12:command:ON:1],>[localbroker:s20node2/gpio/12:command:OFF:0]" }
+
+
+
+
+

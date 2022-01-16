@@ -1,0 +1,7 @@
+Strategies {
+	everyMinute : "0 * * * * ?"
+}
+
+Items {
+	SP1_Dallas1 : strategy = everyMinute, everyChange, restoreOnStartup
+}

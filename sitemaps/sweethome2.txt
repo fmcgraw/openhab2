@@ -1,0 +1,49 @@
+Извиняюсьsitemap sweethome label="Sweet Home"
+{
+	
+Frame label="Свет в квартире"{
+	Switch item=ESOCKET3 label="Лампа кабинет"
+	Switch item=ESOCKET4 label="Кабинет диван"
+	Switch item=S202 label="Кухня диван"
+	//Switch item=SONOFF1 label="Ёлка"
+	Switch item=ESOCKET1 label="Vegas"
+	Switch item=SONOFF4 label="Гирлянда"
+	Switch item=SONOFF3 label="Буквы"
+	//Switch item=S201 label="Slamper"
+	//Switch item=S202 label="Розетка 2"
+	Switch item=ESOCKET6 label="Зимний сад"
+	//Switch item=SONOFF5 label="Полив Кухня" 
+	//Switch item=SONOFF4WOLF label="СветWolf"
+	Switch item=HomeLight icon="light" mappings=[OFF="ВЫКЛ. ВСЕ"]
+	//Switch item=SECURE  label="На отдыхе"
+}
+
+Frame label="Температура"{
+	Text item=Tube_temp valuecolor=[>28="red",>23="#e15a00",>15="green",>5="#91c000",>0="#3284ff",<0="blue"] labelcolor=[>28="red",>23="#e15a00",>15="green",>5="#91c000",>0="#3284ff",<0="blue"]
+	//Text item=SPtest_Temp1 label="Дома [%.1f °C]"
+	//Text item=SPtest_Temp1
+	//Chart item=SPtest_Temp1 period=8h refresh=600
+}
+
+Frame label="SmartPot 1"{
+        //Switch item=SP1Relay1 label="Свет 1"
+        //Switch item=SP1Relay2 label="Свет 2"
+        Switch item=AllSP1Light label="Свет"
+        //Switch item=SP1Relay3 label="Полив"
+        //Text item=SP1_Temp1
+        //Text item=SP1_Temp2
+        Text item=SP1_Temp4
+        //Text item=SP1_TempoInsAVG
+        //Text item=SP1_Temp3
+        Text item=SP1_Humi1
+        //Text item=SP1_Moist1
+}
+
+Frame label="Сервисы"{
+	Text item=SetSecure label="Secure [%s]" icon="switch"
+	Text item=SetAlerts label="Alarm [%s]" icon="switch"
+        Text item=SetALight label="AutoLight [%s]" icon="switch"
+	Text item=SetAssist label="Assistant [%s]" icon="switch"
+}
+
+}

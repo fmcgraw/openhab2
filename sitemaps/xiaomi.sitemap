@@ -1,0 +1,39 @@
+sitemap xiaomi label="Xiaomi"
+{
+
+Frame label="Показания датчиков Xiaomi"{
+	Text item=Xi_HT_Temperature label="Температура [%.1f °C]"
+	Text item=Xi_HT_Humidity label="Влажность воздуха [%.1f %%]" icon="humidity"
+
+	Switch item=Xi_WindowSwitch_Status label="Статус окна" mappings=[OPEN="Открыто"] visibility=[Xi_WindowSwitch_Status==OPEN] 
+	Switch item=Xi_WindowSwitch_Status label="Статус окна" mappings=[CLOSED="Закрыто"] visibility=[Xi_WindowSwitch_Status==CLOSED]
+	Text item=Xi_WindowSwitch_LastOpened label="Время окрытия окна" visibility=[Xi_WindowSwitch_Status==OPEN] 
+	Text item=Xi_WindowSwitch_LastOpened label="Время закрытия окна" visibility=[Xi_WindowSwitch_Status==CLOSED] 
+	
+	Switch item=Xi_MotionSensor_MotionStatus label="Движение 1" mappings=[ON="Есть"] visibility=[Xi_MotionSensor_MotionStatus==ON] 
+	Switch item=Xi_MotionSensor_MotionStatus label="Движение 1" mappings=[OFF="Нет"] visibility=[Xi_MotionSensor_MotionStatus==OFF]
+	Text item=Xi_MotionSensor_LastMotion label="Время движения 1"
+	
+	Switch item=Xi_MotionSensor_2_MotionStatus label="Движение 2" mappings=[ON="Есть"] visibility=[Xi_MotionSensor_2_MotionStatus==ON] 
+	Switch item=Xi_MotionSensor_2_MotionStatus label="Движение 2" mappings=[OFF="Нет"] visibility=[Xi_MotionSensor_2_MotionStatus==OFF]
+	Text item=Xi_MotionSensor_2_LastMotion label="Время движения 2"
+	
+	Switch item=Xi_MotionSensor_3_MotionStatus label="Движение 3" mappings=[ON="Есть"] visibility=[Xi_MotionSensor_3_MotionStatus==ON] 
+	Switch item=Xi_MotionSensor_3_MotionStatus label="Движение 3" mappings=[OFF="Нет"] visibility=[Xi_MotionSensor_3_MotionStatus==OFF]
+	Text item=Xi_MotionSensor_3_LastMotion label="Время движения 3"
+	
+	Text item=Xi_Cube_RotationAngle label="Угол вращения куба [%s °]"
+	Text item=Xi_Cube_RotationTime label="Время вращения куба [%s ms]"
+}
+
+Frame label="Xiaomi Gateway"{
+	Switch item=Xi_Gateway_LightSwitch label="Подсветка"
+	Slider item=Xi_Gateway_Brightness label="Яркость"
+	Colorpicker item=Xi_Gateway_Color label="Цвет" icon="colorwheel"
+	Slider item=Xi_Gateway_ColorTemperatures label="Цветовая температура"
+	Switch item=Xi_Gateway_SoundSwitch label="Без звука"
+	Slider item=Xi_Gateway_SoundVolume label="Гомкость"
+	Selection item=Xi_Gateway_Sound label="Выбор звука" mappings=[ 0="police car 1", 1="police car 2", 2="accident", 3="countdown", 4="ghost", 5="sniper rifle", 6="battle", 7="air raid", 8="bark", 10="doorbell", 11="knock at a door", 12="amuse", 13="alarm clock", 20="mimix", 21="enthusuastic", 22="guitar classic", 23="ice world piano", 24="leisure time", 25="child hood", 26="morning stream liet", 27="music box", 28="orange", 29="thinker"]
+}
+
+}
